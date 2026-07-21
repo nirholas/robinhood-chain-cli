@@ -1,5 +1,8 @@
 # hood-cli
 
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/nirholas/robinhood-chain-cli)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/nirholas/robinhood-chain-cli)
+
 **The command-line toolkit for [Robinhood Chain](https://docs.robinhood.com/chain/) (chain ID 4663).**
 
 Instant reads with zero config, guarded writes with an encrypted local wallet. Prices,
@@ -475,6 +478,13 @@ npm run docs           # runs all three in order
 `docs/index.template.html` and `docs/commands.template.html` are the editable sources;
 `docs/index.html` and `docs/commands.html` are the generated, real-data-inlined output that
 Pages actually serves — re-run `npm run docs` after any command change to keep them in sync.
+
+**Where it's hosted:** GitHub Pages is the default (`Settings → Pages → Deploy from a branch →
+main → /docs`) → <https://nirholas.github.io/robinhood-chain-cli/>. The **Deploy to Cloudflare**
+and **Deploy with Vercel** buttons at the top of this README are one-click alternatives —
+`wrangler.json`/`vercel.json` at the repo root both point at `docs/` as a plain static folder, no
+build command needed. There's no server component to this tool (it's a local CLI), so only the
+docs site is deployable — `npm install -g hood-cli` is how you get the tool itself.
 
 ### Publishing
 
