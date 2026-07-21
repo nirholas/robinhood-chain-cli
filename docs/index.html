@@ -3,95 +3,407 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>hood-cli — the Robinhood Chain command-line toolkit</title>
-<meta name="description" content="hood-cli: instant reads with zero config, guarded writes with a wallet. Prices, portfolios, launches, swaps, transfers — the gh/vercel of Robinhood Chain (4663).">
+<title>hood-cli — the command line for Robinhood Chain</title>
+<meta name="description" content="hood-cli: instant reads with zero config, guarded writes with a wallet. Prices, portfolios, launches, swaps, transfers — the command-line toolkit for Robinhood Chain (chain 4663). This page is a real, typeable terminal.">
+<link rel="canonical" href="https://nirholas.github.io/robinhood-chain-cli/">
+<meta name="theme-color" content="#050505">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="hood-cli — the command line for Robinhood Chain">
+<meta property="og:description" content="Type a real hood-cli command into this page and get a real answer: a captured mainnet session, or the CLI's own --help text. Zero fabricated output.">
+<meta property="og:url" content="https://nirholas.github.io/robinhood-chain-cli/">
+<meta property="og:site_name" content="hood-cli">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hood-cli — the command line for Robinhood Chain">
+<meta name="twitter:description" content="Type a real hood-cli command into this page and get a real answer: a captured mainnet session, or the CLI's own --help text.">
+
 <link rel="stylesheet" href="./site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050505'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='54' fill='%23f2f2f2' text-anchor='middle'%3E%24%3C/text%3E%3C/svg%3E">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "hood-cli",
+  "alternateName": "robinhood-chain-cli",
+  "description": "The command-line toolkit for Robinhood Chain (chain ID 4663): instant reads with zero config, guarded writes with an encrypted local wallet. Prices, the full Stock Token board, memecoin launches, portfolios, swaps, transfers, and transaction decoding.",
+  "url": "https://nirholas.github.io/robinhood-chain-cli/",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Node.js >= 20 (macOS, Linux, Windows)",
+  "softwareVersion": "0.2.0",
+  "license": "https://github.com/nirholas/robinhood-chain-cli/blob/main/LICENSE",
+  "codeRepository": "https://github.com/nirholas/robinhood-chain-cli",
+  "downloadUrl": "https://www.npmjs.com/package/hood-cli",
+  "author": { "@type": "Person", "name": "nirholas", "url": "https://x.com/nichxbt" },
+  "publisher": { "@type": "Organization", "name": "three.ws", "url": "https://three.ws" }
+}
+</script>
 </head>
 <body>
 
-<nav class="top" aria-label="Site">
+<a class="skip-link" href="#terminal">Skip to terminal</a>
+
+<header class="bar">
   <div class="wrap">
-    <a class="brand" href="./index.html">hood<span class="tick">-cli</span></a>
-    <div class="links">
-      <a href="#quickstart">Quickstart</a>
-      <a href="#commands" class="hide-sm">Commands</a>
-      <a href="./commands.html">Command reference</a>
-      <a href="https://github.com/nirholas/hood-cli">GitHub</a>
-    </div>
-  </div>
-</nav>
-
-<header class="hero wrap">
-  <h1>The command line for<br><span class="grad">Robinhood Chain</span></h1>
-  <p class="lede">
-    Instant reads, zero config. Guarded writes with a wallet. Prices, the full Stock
-    Token board, launchpad feeds, portfolios, swaps, transfers — chain ID 4663, the
-    <code>gh</code>/<code>vercel</code> of Robinhood Chain.
-  </p>
-  <div class="cta">
-    <span class="install"><span class="dollar">$</span> npm install -g hood-cli<button class="copy" data-copy="npm install -g hood-cli" aria-label="Copy install command">copy</button></span>
-    <a class="btn primary" href="#quickstart">Get started</a>
-    <a class="btn" href="./commands.html">Command reference</a>
-  </div>
-
-  <div class="terminal" id="terminal">
-    <div class="terminal-bar">
-      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-      <span class="title">hood — real session, chain 4663 mainnet</span>
-    </div>
-    <div class="terminal-body" id="terminal-body" aria-live="polite"></div>
-    <div class="terminal-note" id="terminal-note">Replaying a real captured session — every number is a live mainnet read.</div>
+    <a class="brand" href="./index.html">hood-cli</a>
+    <nav aria-label="Site">
+      <a href="./commands.html">Reference</a>
+      <a href="https://github.com/nirholas/robinhood-chain-cli">GitHub</a>
+    </nav>
   </div>
 </header>
 
-<main class="wrap">
+<main>
+<section class="hero wrap">
+  <p class="eyebrow">Robinhood Chain · chain 4663 · npm i -g hood-cli</p>
+  <h1>Type a command.<br>Get a real answer.</h1>
+  <p class="lede">
+    hood-cli is the command-line toolkit for Robinhood Chain: Stock Token prices, portfolios,
+    launchpad feeds, swaps, transfers, transaction decoding. This page isn't a description of a
+    terminal — it is one. Every reply below is either a real mainnet session captured on
+    <time datetime="2026-07-20T22:56:35.608Z">2026-07-20</time>, or the CLI's own real
+    <code>--help</code> text. Nothing on this page is invented.
+  </p>
+  <div class="install">
+    <span class="dollar">$</span> npm install -g hood-cli
+    <button class="copy" data-copy="npm install -g hood-cli" aria-label="Copy install command">copy</button>
+  </div>
+</section>
 
-<section class="block" id="quickstart">
-  <h2>Quickstart</h2>
-  <p class="sub">Node ≥ 20. Reads work with zero setup; writes need a wallet.</p>
-  <pre><code># install globally
+<section class="term-wrap wrap" id="terminal-section">
+  <div class="terminal" id="terminal">
+    <div class="terminal-bar">
+      <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+      <span class="terminal-title">hood — chain 4663 mainnet</span>
+    </div>
+    <div class="terminal-output" id="term-output" role="log" aria-live="polite" aria-label="Terminal session output">
+      <p class="term-welcome">hood-cli interactive docs — real mainnet output only, nothing invented.
+Try: price AAPL · stocks --sort premium --dex --limit 6 · launches --lookback 2000000 --limit 5 --names
+     portfolio 0x9701fb0aDe1E269c8f64Ec0C7b3cfADB31A13A52 · swap --sell USDG --buy WETH --amount 250
+     tx 0x870a3bee3070f10e3c4f34271cfde70fd5aa0dc2eade6f07d01ae6c9a00285bd
+Any other command name shows its real <code>--help</code>. Type <code>help</code> for the full list.</p>
+    </div>
+    <form class="terminal-input-row" id="term-form" autocomplete="off">
+      <label for="term-input" class="sr-only">hood-cli command input — type a command and press Enter</label>
+      <span class="prompt-glyph" aria-hidden="true">❯</span>
+      <input id="term-input" name="command" type="text" inputmode="text" spellcheck="false"
+             autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="price AAPL">
+    </form>
+    <div class="terminal-suggestions" id="term-suggestions" role="group" aria-label="Command suggestions — tap to insert"></div>
+  </div>
+  <p class="terminal-hint">
+    Press <kbd>Tab</kbd>, or tap a suggestion above, to autocomplete a command — there's no
+    navigation bar to click through, discovering what <code>hood</code> can do <em>is</em>
+    typing into it, same as the real CLI. <kbd>↑</kbd>/<kbd>↓</kbd> replay your own history.
+    JavaScript off? The same real data is below as static HTML: <a href="#reference">jump to the reference</a>.
+  </p>
+</section>
+
+<section class="block wrap" id="install-full">
+  <h2>Install</h2>
+  <p class="sub">Node ≥ 20. Reads work with zero setup — no wallet, no API key. Writes need a wallet and always stop for confirmation.</p>
+  <pre><code># install globally — ships two equivalent binaries: hood and hoodc
 npm install -g hood-cli
+
+# or run without installing
+npx hood-cli price AAPL
 
 # instant read — no config, no wallet
 hood price AAPL
 
-# the full Stock Token board, live
-hood stocks --sort premium --dex
-
-# stream new memecoin launches
-hood launches --follow
-
 # set up a wallet (encrypted keystore, password-protected)
 hood config set wallet
 
-# quote a swap (default: dry run)
+# quote a swap (default: dry run, nothing is sent)
 hood swap --sell USDG --buy WETH --amount 100
 
 # sign and send — always confirms first
-hood swap --sell USDG --buy WETH --amount 100 --execute</code></pre>
+hood swap --sell USDG --buy WETH --amount 100 --execute
+
+# one-command setup wizard: wallet + LLM trading key + Telegram/X alerts
+hood init</code></pre>
 </section>
 
-<section class="block" id="commands">
-  <h2>Every command</h2>
-  <p class="sub">Reads need nothing. Writes need a wallet + <code>--execute</code> — quote/plan is always the default. Full reference with live <code>--help</code> output: <a href="./commands.html">commands.html</a>.</p>
-  <div class="grid">
-    <div class="card"><h3>hood price &lt;symbol&gt;</h3><p>Chainlink oracle price, live DEX price, and the premium between them.</p></div>
-    <div class="card"><h3>hood stocks</h3><p>The full 95-token Stock Token board, sortable by symbol, price, or premium.</p></div>
-    <div class="card"><h3>hood coins</h3><p>Memecoin screener — newest launches or ranked by bonding-curve activity.</p></div>
-    <div class="card"><h3>hood launches --follow</h3><p>Live-streaming feed of new NOXA and The Odyssey launches.</p></div>
-    <div class="card"><h3>hood portfolio &lt;address&gt;</h3><p>Multiplier-correct positions and USD totals for any wallet.</p></div>
-    <div class="card"><h3>hood tx / hood token</h3><p>Decoded transaction inspection and token metadata via Blockscout + RPC.</p></div>
-    <div class="card"><h3>hood watch &lt;addr|token&gt;</h3><p>Live activity stream — transfers and native ETH movement.</p></div>
-    <div class="card"><h3>hood swap</h3><p>Quote by default; <code>--execute</code> signs and sends a real Uniswap v3 swap.</p></div>
-    <div class="card"><h3>hood transfer</h3><p>Send ETH or any ERC-20, with an always-on confirmation gate.</p></div>
-    <div class="card"><h3>hood deploy-token</h3><p>Deploy a real, fixed-supply ERC-20 from a JSON config.</p></div>
-    <div class="card"><h3>hood faucet</h3><p>Testnet faucet instructions + live testnet balance check.</p></div>
-    <div class="card"><h3>hood config</h3><p>RPC, wallet, network, and spend-cap settings.</p></div>
-  </div>
+<section class="block wrap" id="reference">
+  <h2>Full command reference</h2>
+  <p class="sub">
+    Every block below is the real, unedited output of <code>hood &lt;command&gt; --help</code>,
+    generated on <time datetime="2026-07-20T22:56:46.393Z">2026-07-20</time> straight from the
+    CLI's own commander definitions. This is static HTML — it is fully present with JavaScript
+    disabled. The terminal above is enhancement on top of it, never a replacement.
+  </p>
+  <ul class="ref-index" aria-label="Jump to a command">
+    <li><a href="#cmd-root">hood</a></li>
+    <li><a href="#cmd-price">hood price</a></li>
+    <li><a href="#cmd-stocks">hood stocks</a></li>
+    <li><a href="#cmd-coins">hood coins</a></li>
+    <li><a href="#cmd-launches">hood launches</a></li>
+    <li><a href="#cmd-portfolio">hood portfolio</a></li>
+    <li><a href="#cmd-tx">hood tx</a></li>
+    <li><a href="#cmd-token">hood token</a></li>
+    <li><a href="#cmd-watch">hood watch</a></li>
+    <li><a href="#cmd-swap">hood swap</a></li>
+    <li><a href="#cmd-transfer">hood transfer</a></li>
+    <li><a href="#cmd-faucet">hood faucet</a></li>
+    <li><a href="#cmd-deploy-token">hood deploy-token</a></li>
+    <li><a href="#cmd-config">hood config</a></li>
+    <li><a href="#cmd-init">hood init</a></li>
+  </ul>
+  <section class="ref-cmd" id="cmd-root">
+    <h3><a href="#cmd-root">hood</a></h3>
+    <p class="ref-cmd-desc">top-level usage &amp; global flags</p>
+    <pre>Usage: hood [options] [command]
+
+The command-line toolkit for Robinhood Chain (4663) — instant reads, guarded
+writes.
+
+Options:
+  -v, --version                  output the version number
+  --json                         machine-readable JSON output
+  --network &lt;net&gt;                mainnet | testnet (default: "mainnet")
+  --rpc &lt;url&gt;                    override the RPC endpoint
+  --verbose                      show raw error causes
+  --yes                          skip interactive confirmation on writes (still
+                                 requires --execute)
+  --acknowledge-eligibility      affirm Stock Token acquisition eligibility
+                                 (non-US/CA/UK/CH)
+  --no-color                     disable ANSI colour
+  -h, --help                     display help for command
+
+Commands:
+  price [options] &lt;symbol&gt;       Chainlink oracle price + DEX price + premium
+                                 for a Stock Token
+  stocks [options]               The full Stock Token board with live Chainlink
+                                 prices
+  coins [options]                Memecoin screener — newest or trending
+                                 launches
+  launches [options]             Recent memecoin launches from NOXA and The
+                                 Odyssey
+  portfolio [options] &lt;address&gt;  Multiplier-correct Stock Token positions + USD
+                                 totals for an address
+  tx &lt;hash&gt;                      Decode a transaction: status, transfers, gas,
+                                 method
+  token &lt;address&gt;                Inspect a token: metadata, supply, multiplier,
+                                 price
+  watch [options] &lt;addrOrToken&gt;  Live activity stream for an address or a token
+                                 (ERC-20 transfers + native ETH)
+  swap [options]                 Quote (default) or execute a Uniswap v3 swap
+                                 between two tokens
+  transfer [options]             Send ETH or an ERC-20 token to an address
+  faucet                         Print testnet faucet instructions + current
+                                 testnet balances
+  deploy-token [options]         Deploy a fixed-supply ERC-20 from a JSON
+                                 config (direct-rail, no launchpad)
+  config                         Manage hood-cli settings (rpc, wallet,
+                                 network)
+  init [options]                 interactive setup wizard: wallet, LLM key
+                                 (hood-traders), and Telegram/X (hood-alerts)
+  help [command]                 display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-price" data-cmd="price">
+    <h3><a href="#cmd-price">hood price</a></h3>
+    <p class="ref-cmd-desc">Chainlink oracle price + DEX price + premium for a Stock Token</p>
+    <pre>Usage: hood price [options] &lt;symbol&gt;
+
+Chainlink oracle price + DEX price + premium for a Stock Token
+
+Arguments:
+  symbol               ticker (AAPL) or token address
+
+Options:
+  --watch              live-updating view (repaints in place) (default: false)
+  --interval &lt;ms&gt;      refresh interval for --watch (default: "4000")
+  --max-age &lt;seconds&gt;  max acceptable Chainlink answer age
+  --no-dex             skip the Uniswap price probe (oracle only)
+  -h, --help           display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-stocks" data-cmd="stocks">
+    <h3><a href="#cmd-stocks">hood stocks</a></h3>
+    <p class="ref-cmd-desc">The full Stock Token board with live Chainlink prices</p>
+    <pre>Usage: hood stocks [options]
+
+The full Stock Token board with live Chainlink prices
+
+Options:
+  --sort &lt;key&gt;  sort by symbol | price | premium (premium implies --dex)
+                (default: "symbol")
+  --dex         also probe Uniswap for DEX price + premium (slower) (default:
+                false)
+  --priced      only tokens with a live Chainlink feed (default: false)
+  --limit &lt;n&gt;   show at most n rows
+  -h, --help    display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-coins" data-cmd="coins">
+    <h3><a href="#cmd-coins">hood coins</a></h3>
+    <p class="ref-cmd-desc">Memecoin screener — newest or trending launches</p>
+    <pre>Usage: hood coins [options]
+
+Memecoin screener — newest or trending launches
+
+Options:
+  --new                newest launches (default) (default: false)
+  --trending           rank by bonding-curve trade activity (default: false)
+  --lookback &lt;blocks&gt;  blocks to scan (default: "50000")
+  --limit &lt;n&gt;          rows to show (default: "20")
+  --names              resolve token symbols on-chain (default: false)
+  -h, --help           display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-launches" data-cmd="launches">
+    <h3><a href="#cmd-launches">hood launches</a></h3>
+    <p class="ref-cmd-desc">Recent memecoin launches from NOXA and The Odyssey</p>
+    <pre>Usage: hood launches [options]
+
+Recent memecoin launches from NOXA and The Odyssey
+
+Options:
+  --follow             stream new launches live (default: false)
+  --launchpad &lt;name&gt;   noxa | odyssey (default: both)
+  --lookback &lt;blocks&gt;  blocks to scan for the snapshot (default: "30000")
+  --limit &lt;n&gt;          max rows in the snapshot (default: "25")
+  --names              resolve each token symbol on-chain (default: false)
+  -h, --help           display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-portfolio" data-cmd="portfolio">
+    <h3><a href="#cmd-portfolio">hood portfolio</a></h3>
+    <p class="ref-cmd-desc">Multiplier-correct Stock Token positions + USD totals for an address</p>
+    <pre>Usage: hood portfolio [options] &lt;address&gt;
+
+Multiplier-correct Stock Token positions + USD totals for an address
+
+Arguments:
+  address              wallet address to inspect
+
+Options:
+  --max-age &lt;seconds&gt;  max acceptable Chainlink answer age
+  -h, --help           display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-tx" data-cmd="tx">
+    <h3><a href="#cmd-tx">hood tx</a></h3>
+    <p class="ref-cmd-desc">Decode a transaction: status, transfers, gas, method</p>
+    <pre>Usage: hood tx [options] &lt;hash&gt;
+
+Decode a transaction: status, transfers, gas, method
+
+Arguments:
+  hash        transaction hash
+
+Options:
+  -h, --help  display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-token" data-cmd="token">
+    <h3><a href="#cmd-token">hood token</a></h3>
+    <p class="ref-cmd-desc">Inspect a token: metadata, supply, multiplier, price</p>
+    <pre>Usage: hood token [options] &lt;address&gt;
+
+Inspect a token: metadata, supply, multiplier, price
+
+Arguments:
+  address     token address or ticker
+
+Options:
+  -h, --help  display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-watch" data-cmd="watch">
+    <h3><a href="#cmd-watch">hood watch</a></h3>
+    <p class="ref-cmd-desc">Live activity stream for an address or a token (ERC-20 transfers + native ETH)</p>
+    <pre>Usage: hood watch [options] &lt;addrOrToken&gt;
+
+Live activity stream for an address or a token (ERC-20 transfers + native ETH)
+
+Arguments:
+  addrOrToken  wallet address, token address, or ticker to watch
+
+Options:
+  --token      treat the argument as a token (stream ALL transfers of it)
+               (default: false)
+  -h, --help   display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-swap" data-cmd="swap">
+    <h3><a href="#cmd-swap">hood swap</a></h3>
+    <p class="ref-cmd-desc">Quote (default) or execute a Uniswap v3 swap between two tokens</p>
+    <pre>Usage: hood swap [options]
+
+Quote (default) or execute a Uniswap v3 swap between two tokens
+
+Options:
+  --sell &lt;token&gt;     ticker or address to sell (e.g. USDG)
+  --buy &lt;token&gt;      ticker or address to buy
+  --amount &lt;amount&gt;  amount of --sell to spend, in whole tokens
+  --slippage &lt;bps&gt;   slippage tolerance in basis points (default: "50")
+  --execute          sign and send (default: quote only) (default: false)
+  -h, --help         display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-transfer" data-cmd="transfer">
+    <h3><a href="#cmd-transfer">hood transfer</a></h3>
+    <p class="ref-cmd-desc">Send ETH or an ERC-20 token to an address</p>
+    <pre>Usage: hood transfer [options]
+
+Send ETH or an ERC-20 token to an address
+
+Options:
+  --to &lt;address&gt;     recipient address
+  --amount &lt;amount&gt;  amount to send, in whole tokens
+  --token &lt;token&gt;    ticker or address to send (default: native ETH)
+  -h, --help         display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-faucet" data-cmd="faucet">
+    <h3><a href="#cmd-faucet">hood faucet</a></h3>
+    <p class="ref-cmd-desc">Print testnet faucet instructions + current testnet balances</p>
+    <pre>Usage: hood faucet [options]
+
+Print testnet faucet instructions + current testnet balances
+
+Options:
+  -h, --help  display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-deploy-token" data-cmd="deploy-token">
+    <h3><a href="#cmd-deploy-token">hood deploy-token</a></h3>
+    <p class="ref-cmd-desc">Deploy a fixed-supply ERC-20 from a JSON config (direct-rail, no launchpad)</p>
+    <pre>Usage: hood deploy-token [options]
+
+Deploy a fixed-supply ERC-20 from a JSON config (direct-rail, no launchpad)
+
+Options:
+  --config &lt;path&gt;  path to a JSON file: { name, symbol, decimals?,
+                   initialSupply }
+  --execute        sign and send (default: print the plan only) (default:
+                   false)
+  -h, --help       display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-config" data-cmd="config">
+    <h3><a href="#cmd-config">hood config</a></h3>
+    <p class="ref-cmd-desc">Manage hood-cli settings (rpc, wallet, network)</p>
+    <pre>Usage: hood config [options] [command]
+
+Manage hood-cli settings (rpc, wallet, network)
+
+Options:
+  -h, --help         display help for command
+
+Commands:
+  set &lt;key&gt; [value]  set a config value (network, rpc, testnetRpc, alchemyKey,
+                     maxSpendUsd, wallet)
+  get &lt;key&gt;          print one config value
+  list               print the full config (secrets masked)
+  help [command]     display help for command</pre>
+  </section>
+  <section class="ref-cmd" id="cmd-init" data-cmd="init">
+    <h3><a href="#cmd-init">hood init</a></h3>
+    <p class="ref-cmd-desc">interactive setup wizard: wallet, LLM key (hood-traders), and Telegram/X</p>
+    <pre>Usage: hood init [options]
+
+interactive setup wizard: wallet, LLM key (hood-traders), and Telegram/X
+(hood-alerts)
+
+Options:
+  --out &lt;dir&gt;  directory to write hood-traders.env / hood-alerts.env into
+               (default: ".")
+  -h, --help   display help for command</pre>
+  </section>
 </section>
 
-<section class="block" id="guards">
+<section class="block wrap" id="guards">
   <h2>Guard rails</h2>
   <p class="sub">Every write defaults to a dry run. Nothing signs without an explicit gate.</p>
   <div class="grid">
@@ -103,13 +415,77 @@ hood swap --sell USDG --buy WETH --amount 100 --execute</code></pre>
     <div class="card"><h3>Meaningful exit codes</h3><p>Scriptable: 2 = bad usage, 3 = network, 4 = guard refused, 5 = not found, 6 = wallet needed.</p></div>
   </div>
 </section>
-
 </main>
 
 <footer class="wrap">
-  <p>MIT licensed. Built by <a href="https://x.com/nichxbt">nirholas</a> · <a href="https://three.ws">three.ws</a>. Not affiliated with Robinhood Markets, Inc.</p>
+  <p>Proprietary — all rights reserved, see <a href="https://github.com/nirholas/robinhood-chain-cli/blob/main/LICENSE">LICENSE</a>.
+  Built by <a href="https://x.com/nichxbt">nirholas</a> · <a href="https://three.ws">three.ws</a>. Not affiliated with Robinhood Markets, Inc.</p>
 </footer>
 
+<script id="commands-data" type="application/json">
+{
+  "generatedAt": "2026-07-20T22:56:46.393Z",
+  "root": "Usage: hood [options] [command]\n\nThe command-line toolkit for Robinhood Chain (4663) — instant reads, guarded\nwrites.\n\nOptions:\n  -v, --version                  output the version number\n  --json                         machine-readable JSON output\n  --network <net>                mainnet | testnet (default: \"mainnet\")\n  --rpc <url>                    override the RPC endpoint\n  --verbose                      show raw error causes\n  --yes                          skip interactive confirmation on writes (still\n                                 requires --execute)\n  --acknowledge-eligibility      affirm Stock Token acquisition eligibility\n                                 (non-US/CA/UK/CH)\n  --no-color                     disable ANSI colour\n  -h, --help                     display help for command\n\nCommands:\n  price [options] <symbol>       Chainlink oracle price + DEX price + premium\n                                 for a Stock Token\n  stocks [options]               The full Stock Token board with live Chainlink\n                                 prices\n  coins [options]                Memecoin screener — newest or trending\n                                 launches\n  launches [options]             Recent memecoin launches from NOXA and The\n                                 Odyssey\n  portfolio [options] <address>  Multiplier-correct Stock Token positions + USD\n                                 totals for an address\n  tx <hash>                      Decode a transaction: status, transfers, gas,\n                                 method\n  token <address>                Inspect a token: metadata, supply, multiplier,\n                                 price\n  watch [options] <addrOrToken>  Live activity stream for an address or a token\n                                 (ERC-20 transfers + native ETH)\n  swap [options]                 Quote (default) or execute a Uniswap v3 swap\n                                 between two tokens\n  transfer [options]             Send ETH or an ERC-20 token to an address\n  faucet                         Print testnet faucet instructions + current\n                                 testnet balances\n  deploy-token [options]         Deploy a fixed-supply ERC-20 from a JSON\n                                 config (direct-rail, no launchpad)\n  config                         Manage hood-cli settings (rpc, wallet,\n                                 network)\n  init [options]                 interactive setup wizard: wallet, LLM key\n                                 (hood-traders), and Telegram/X (hood-alerts)\n  help [command]                 display help for command",
+  "commands": [
+    {
+      "name": "price",
+      "help": "Usage: hood price [options] <symbol>\n\nChainlink oracle price + DEX price + premium for a Stock Token\n\nArguments:\n  symbol               ticker (AAPL) or token address\n\nOptions:\n  --watch              live-updating view (repaints in place) (default: false)\n  --interval <ms>      refresh interval for --watch (default: \"4000\")\n  --max-age <seconds>  max acceptable Chainlink answer age\n  --no-dex             skip the Uniswap price probe (oracle only)\n  -h, --help           display help for command"
+    },
+    {
+      "name": "stocks",
+      "help": "Usage: hood stocks [options]\n\nThe full Stock Token board with live Chainlink prices\n\nOptions:\n  --sort <key>  sort by symbol | price | premium (premium implies --dex)\n                (default: \"symbol\")\n  --dex         also probe Uniswap for DEX price + premium (slower) (default:\n                false)\n  --priced      only tokens with a live Chainlink feed (default: false)\n  --limit <n>   show at most n rows\n  -h, --help    display help for command"
+    },
+    {
+      "name": "coins",
+      "help": "Usage: hood coins [options]\n\nMemecoin screener — newest or trending launches\n\nOptions:\n  --new                newest launches (default) (default: false)\n  --trending           rank by bonding-curve trade activity (default: false)\n  --lookback <blocks>  blocks to scan (default: \"50000\")\n  --limit <n>          rows to show (default: \"20\")\n  --names              resolve token symbols on-chain (default: false)\n  -h, --help           display help for command"
+    },
+    {
+      "name": "launches",
+      "help": "Usage: hood launches [options]\n\nRecent memecoin launches from NOXA and The Odyssey\n\nOptions:\n  --follow             stream new launches live (default: false)\n  --launchpad <name>   noxa | odyssey (default: both)\n  --lookback <blocks>  blocks to scan for the snapshot (default: \"30000\")\n  --limit <n>          max rows in the snapshot (default: \"25\")\n  --names              resolve each token symbol on-chain (default: false)\n  -h, --help           display help for command"
+    },
+    {
+      "name": "portfolio",
+      "help": "Usage: hood portfolio [options] <address>\n\nMultiplier-correct Stock Token positions + USD totals for an address\n\nArguments:\n  address              wallet address to inspect\n\nOptions:\n  --max-age <seconds>  max acceptable Chainlink answer age\n  -h, --help           display help for command"
+    },
+    {
+      "name": "tx",
+      "help": "Usage: hood tx [options] <hash>\n\nDecode a transaction: status, transfers, gas, method\n\nArguments:\n  hash        transaction hash\n\nOptions:\n  -h, --help  display help for command"
+    },
+    {
+      "name": "token",
+      "help": "Usage: hood token [options] <address>\n\nInspect a token: metadata, supply, multiplier, price\n\nArguments:\n  address     token address or ticker\n\nOptions:\n  -h, --help  display help for command"
+    },
+    {
+      "name": "watch",
+      "help": "Usage: hood watch [options] <addrOrToken>\n\nLive activity stream for an address or a token (ERC-20 transfers + native ETH)\n\nArguments:\n  addrOrToken  wallet address, token address, or ticker to watch\n\nOptions:\n  --token      treat the argument as a token (stream ALL transfers of it)\n               (default: false)\n  -h, --help   display help for command"
+    },
+    {
+      "name": "swap",
+      "help": "Usage: hood swap [options]\n\nQuote (default) or execute a Uniswap v3 swap between two tokens\n\nOptions:\n  --sell <token>     ticker or address to sell (e.g. USDG)\n  --buy <token>      ticker or address to buy\n  --amount <amount>  amount of --sell to spend, in whole tokens\n  --slippage <bps>   slippage tolerance in basis points (default: \"50\")\n  --execute          sign and send (default: quote only) (default: false)\n  -h, --help         display help for command"
+    },
+    {
+      "name": "transfer",
+      "help": "Usage: hood transfer [options]\n\nSend ETH or an ERC-20 token to an address\n\nOptions:\n  --to <address>     recipient address\n  --amount <amount>  amount to send, in whole tokens\n  --token <token>    ticker or address to send (default: native ETH)\n  -h, --help         display help for command"
+    },
+    {
+      "name": "faucet",
+      "help": "Usage: hood faucet [options]\n\nPrint testnet faucet instructions + current testnet balances\n\nOptions:\n  -h, --help  display help for command"
+    },
+    {
+      "name": "deploy-token",
+      "help": "Usage: hood deploy-token [options]\n\nDeploy a fixed-supply ERC-20 from a JSON config (direct-rail, no launchpad)\n\nOptions:\n  --config <path>  path to a JSON file: { name, symbol, decimals?,\n                   initialSupply }\n  --execute        sign and send (default: print the plan only) (default:\n                   false)\n  -h, --help       display help for command"
+    },
+    {
+      "name": "config",
+      "help": "Usage: hood config [options] [command]\n\nManage hood-cli settings (rpc, wallet, network)\n\nOptions:\n  -h, --help         display help for command\n\nCommands:\n  set <key> [value]  set a config value (network, rpc, testnetRpc, alchemyKey,\n                     maxSpendUsd, wallet)\n  get <key>          print one config value\n  list               print the full config (secrets masked)\n  help [command]     display help for command"
+    },
+    {
+      "name": "init",
+      "help": "Usage: hood init [options]\n\ninteractive setup wizard: wallet, LLM key (hood-traders), and Telegram/X\n(hood-alerts)\n\nOptions:\n  --out <dir>  directory to write hood-traders.env / hood-alerts.env into\n               (default: \".\")\n  -h, --help   display help for command"
+    }
+  ]
+}
+</script>
 <script id="session-data" type="application/json">
 {
   "capturedAt": "2026-07-20T22:56:35.608Z",
@@ -142,104 +518,7 @@ hood swap --sell USDG --buy WETH --amount 100 --execute</code></pre>
   ]
 }
 </script>
-<script>
-(function () {
-  var data = JSON.parse(document.getElementById('session-data').textContent);
-  var body = document.getElementById('terminal-body');
-  var note = document.getElementById('terminal-note');
-  var frames = data.frames || [];
-  var fi = 0;
-
-  function typePrompt(text, done) {
-    var line = document.createElement('div');
-    line.className = 'line-prompt';
-    body.appendChild(line);
-    var i = 0;
-    var iv = setInterval(function () {
-      line.textContent = text.slice(0, i + 1);
-      i++;
-      body.scrollTop = body.scrollHeight;
-      if (i >= text.length) { clearInterval(iv); setTimeout(done, 220); }
-    }, 18);
-  }
-
-  function showOutput(html, done) {
-    var pre = document.createElement('div');
-    pre.innerHTML = html;
-    body.appendChild(pre);
-    body.scrollTop = body.scrollHeight;
-    setTimeout(done, 1400);
-  }
-
-  function ansiToHtml(s) {
-    var esc = document.createElement('div');
-    esc.textContent = s;
-    var out = esc.innerHTML;
-    var openTags = [];
-    out = out.replace(/\x1b\[(\d+(?:;\d+)*)m/g, function (_, codes) {
-      var parts = codes.split(';').map(Number);
-      var spans = '';
-      for (var idx = 0; idx < parts.length; idx++) {
-        var c = parts[idx];
-        if (c === 0) { spans += openTags.map(function () { return '</span>'; }).join(''); openTags = []; }
-        else if (c === 1) { openTags.push('b'); spans += '<span style="font-weight:700">'; }
-        else if (c === 2) { openTags.push('d'); spans += '<span style="opacity:.6">'; }
-        else if (c === 22) { spans += '</span>'; openTags.pop(); }
-        else if (c === 32) { openTags.push('g'); spans += '<span style="color:#6fe08a">'; }
-        else if (c === 31) { openTags.push('r'); spans += '<span style="color:#f26d7e">'; }
-        else if (c === 90) { openTags.push('gr'); spans += '<span style="color:#7a7a86">'; }
-        else if (c === 39) { spans += '</span>'; openTags.pop(); }
-        else if (parts[idx] === 38 && parts[idx + 1] === 5) {
-          openTags.push('x'); spans += '<span style="color:#7ef29a">'; idx += 2;
-        }
-      }
-      return spans;
-    });
-    out += openTags.map(function () { return '</span>'; }).join('');
-    return out;
-  }
-
-  // Real ANSI codes come straight from the captured session (docs/session.json,
-  // produced by `npm run capture` against live mainnet) — never hand-written.
-  function playFrame() {
-    if (fi >= frames.length) {
-      setTimeout(function () { body.innerHTML = ''; fi = 0; playFrame(); }, 2600);
-      return;
-    }
-    var frame = frames[fi];
-    note.textContent = 'hood ' + frame.prompt.replace(/^hood /, '') + ' — captured ' + (data.capturedAt ? new Date(data.capturedAt).toLocaleDateString() : '');
-    typePrompt(frame.prompt, function () {
-      showOutput(ansiToHtml(frame.output), function () {
-        fi++;
-        playFrame();
-      });
-    });
-  }
-
-  if (frames.length === 0) {
-    body.textContent = 'No captured session found. Run `npm run capture` to record one.';
-  } else if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    frames.forEach(function (f) {
-      var p = document.createElement('div'); p.className = 'line-prompt'; p.textContent = f.prompt;
-      body.appendChild(p);
-      var o = document.createElement('div'); o.innerHTML = ansiToHtml(f.output);
-      body.appendChild(o);
-    });
-  } else {
-    playFrame();
-  }
-
-  document.querySelectorAll('button.copy').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      navigator.clipboard.writeText(btn.getAttribute('data-copy')).then(function () {
-        var prev = btn.textContent;
-        btn.textContent = 'copied';
-        setTimeout(function () { btn.textContent = prev; }, 1200);
-      });
-    });
-  });
-})();
-</script>
+<script src="./terminal.js"></script>
 
 </body>
 </html>
