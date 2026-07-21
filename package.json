@@ -1,6 +1,6 @@
 {
   "name": "hood-cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The command-line toolkit for Robinhood Chain (chain 4663): instant reads with zero config, guarded writes with a wallet. Prices, portfolios, launches, swaps, transfers — the gh/vercel of Robinhood Chain.",
   "keywords": [
     "robinhood",
@@ -17,11 +17,11 @@
   "author": "nirholas (https://x.com/nichxbt)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nirholas/hood-cli.git"
+    "url": "git+https://github.com/nirholas/robinhood-chain-cli.git"
   },
-  "homepage": "https://nirholas.github.io/hood-cli/",
+  "homepage": "https://nirholas.github.io/robinhood-chain-cli/",
   "bugs": {
-    "url": "https://github.com/nirholas/hood-cli/issues"
+    "url": "https://github.com/nirholas/robinhood-chain-cli/issues"
   },
   "type": "module",
   "engines": {
