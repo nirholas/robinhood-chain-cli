@@ -17,8 +17,8 @@ work immediately with no wallet or API key. Write commands (`swap`, `transfer`,
 `deploy-token`) need a wallet and always stop for an explicit confirmation before signing.
 
 Docs + a live animated terminal demo (a REAL captured session, not invented output):
-**https://nirholas.github.io/hood-cli/** · full flag-by-flag command reference:
-**https://nirholas.github.io/hood-cli/commands.html** (generated straight from `hood
+**https://nirholas.github.io/robinhood-chain-cli/** · full flag-by-flag command reference:
+**https://nirholas.github.io/robinhood-chain-cli/commands.html** (generated straight from `hood
 <command> --help` — never hand-written, never drifts from the shipped binary).
 
 ## Install
@@ -38,8 +38,8 @@ npx hood-cli price AAPL
 From a checkout:
 
 ```bash
-git clone https://github.com/nirholas/hood-cli.git
-cd hood-cli
+git clone https://github.com/nirholas/robinhood-chain-cli.git
+cd robinhood-chain-cli
 npm install
 npm run build
 node dist/cli.js price AAPL
@@ -357,8 +357,8 @@ config file or plaintext disk.
 ### `hood init`
 
 The one-command onboarding wizard for the whole trading stack: this CLI's wallet, the
-[`hood-traders`](https://github.com/nirholas/hood-traders) `llm-strategist` (bring your own key —
-Claude, OpenAI, Groq, or OpenRouter), and the [`hood-alerts`](https://github.com/nirholas/hood-alerts)
+[`hood-traders`](https://github.com/nirholas/robinhood-chain-traders) `llm-strategist` (bring your own key —
+Claude, OpenAI, Groq, or OpenRouter), and the [`hood-alerts`](https://github.com/nirholas/robinhood-chain-alerts)
 Telegram bot / Discord bot / X (Twitter) auto-posting. Every step is optional — skip anything you
 don't need with `n` or Enter.
 
