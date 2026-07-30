@@ -358,7 +358,7 @@ config file or plaintext disk.
 
 The one-command onboarding wizard for the whole trading stack: this CLI's wallet, the
 [`hood-traders`](https://github.com/nirholas/robinhood-chain-traders) `llm-strategist` (bring your own key —
-Claude, OpenAI, Groq, or OpenRouter), and the [`hood-alerts`](https://github.com/nirholas/robinhood-chain-alerts)
+Claude, OpenAI, Groq, or OpenRouter), and the [`hood-alerts`](https://github.com/nirholas/robinhood-chain-alert-bot)
 Telegram bot / Discord bot / X (Twitter) auto-posting. Every step is optional — skip anything you
 don't need with `n` or Enter.
 
