@@ -502,3 +502,7 @@ All rights reserved. See [LICENSE](./LICENSE).
 ---
 
 Built by [nirholas](https://x.com/nichxbt) · [three.ws](https://three.ws)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=nirholas/robinhood-chain-cli&type=Date)](https://www.star-history.com/#nirholas/robinhood-chain-cli&Date)
