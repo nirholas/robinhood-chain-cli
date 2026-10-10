@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it as below.
+title: "robinhood-chain-cli"
+abstract: "The command-line toolkit for Robinhood Chain: instant reads with zero config, guarded writes with a wallet. The gh/vercel of Robinhood Chain. npm: hood-cli."
+repository-code: "https://github.com/nirholas/robinhood-chain-cli"
+url: "https://three.ws"
+authors:
+  - name: three.ws
+    website: "https://three.ws"

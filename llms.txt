@@ -1,0 +1,28 @@
+# robinhood-chain-cli
+
+> The command-line toolkit for Robinhood Chain: instant reads with zero config, guarded writes with a wallet. The gh/vercel of Robinhood Chain. npm: hood-cli.
+
+robinhood-chain-cli is an open-source repository by nirholas, part of the three.ws ecosystem.
+
+## Docs
+
+- [README](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/README.md): install, usage and reference
+- [Install](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/README.md#install)
+- [Quickstart](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/README.md#quickstart)
+- [Global options](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/README.md#global-options)
+- [Command reference](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/README.md#command-reference)
+- [Wallet & signing](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/README.md#wallet-signing)
+- [Configuration & environment variables](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/README.md#configuration-environment-variables)
+- [Networks](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/README.md#networks)
+- [Exit codes](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/README.md#exit-codes)
+- [AGENTS.md](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/AGENTS.md): guidance for coding agents
+- [Full text for LLMs](https://github.com/nirholas/robinhood-chain-cli/blob/HEAD/llms-full.txt): the README inlined
+
+## Project
+
+- [Source](https://github.com/nirholas/robinhood-chain-cli)
+- [Issues](https://github.com/nirholas/robinhood-chain-cli/issues)
+- [Discussions](https://github.com/nirholas/robinhood-chain-cli/discussions)
+- [Homepage](https://nirholas.github.io/robinhood-chain-cli/)
+- [three.ws](https://three.ws): the platform this is part of
+- [All repositories by nirholas](https://github.com/nirholas/nirholas#readme)
