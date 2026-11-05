@@ -8,7 +8,7 @@ import { http, isHex } from 'viem'
 import { loadConfig, defaultKeystorePath, type HoodConfig } from './config.js'
 import { decryptKeystore, keystoreExists } from './keystore.js'
 import { readPassword } from './prompt.js'
-import { walletError } from './errors.js'
+import { usageError, walletError } from './errors.js'
 
 /** Global flags parsed by commander and threaded into every command. */
 export interface GlobalOptions {
@@ -51,15 +51,58 @@ export function resolveRpcUrl(config: HoodConfig, network: HoodNetwork, override
  * fast for that — widen it so `hood stocks` / `hood launches` ride out a
  * rate-limit window instead of surfacing a network error to the user.
  */
-function buildTransport(rpcUrl?: string) {
-  return http(rpcUrl, { retryCount: 5, retryDelay: 500, timeout: 20_000 })
+function resolveRpcHeaders(): Record<string, string> | undefined {
+  const raw = process.env.HOOD_RPC_HEADERS
+  if (raw === undefined || raw.trim() === '') return undefined
+
+  let parsed: unknown
+  try {
+    parsed = JSON.parse(raw)
+  } catch {
+    throw rpcHeadersUsageError()
+  }
+  if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) {
+    throw rpcHeadersUsageError()
+  }
+
+  const headers = new Headers()
+  try {
+    for (const [name, value] of Object.entries(parsed)) {
+      if (typeof value !== 'string') throw rpcHeadersUsageError()
+      headers.append(name, value)
+    }
+  } catch (error) {
+    if (error instanceof Error && error.message === RPC_HEADERS_ERROR) throw error
+    throw rpcHeadersUsageError()
+  }
+  return Object.keys(parsed).length === 0 ? undefined : Object.fromEntries(headers.entries())
+}
+
+const RPC_HEADERS_ERROR = 'HOOD_RPC_HEADERS must be a JSON object with valid HTTP header names and string values.'
+
+function rpcHeadersUsageError() {
+  return usageError(RPC_HEADERS_ERROR)
+}
+
+function buildTransport(rpcUrl: string | undefined, headers?: Record<string, string>) {
+  return http(rpcUrl, {
+    retryCount: 5,
+    retryDelay: 500,
+    timeout: 20_000,
+    ...(headers ? { fetchOptions: { headers, redirect: 'error' as const } } : {}),
+  })
 }
 
 /** Build the shared context from the global flags. */
 export function createContext(opts: GlobalOptions): Context {
+  const rpcHeaders = resolveRpcHeaders()
   const config = loadConfig()
   const network: HoodNetwork = opts.network ?? config.network ?? 'mainnet'
   const rpcUrl = resolveRpcUrl(config, network, opts.rpc)
+  if (rpcHeaders && !rpcUrl) {
+    throw usageError('HOOD_RPC_HEADERS requires an explicit RPC URL via --rpc, config, or the existing Alchemy URL.')
+  }
+  const transport = buildTransport(rpcUrl, rpcHeaders)
 
   let readClient: HoodClient | null = null
   let walletClient: HoodClient | null = null
@@ -74,7 +117,7 @@ export function createContext(opts: GlobalOptions): Context {
     rpcUrl,
     read() {
       if (!readClient) {
-        readClient = createHoodClient({ chain: network, transport: buildTransport(rpcUrl) })
+        readClient = createHoodClient({ chain: network, transport })
       }
       return readClient
     },
@@ -83,7 +126,7 @@ export function createContext(opts: GlobalOptions): Context {
       const account = await loadAccount(config)
       walletClient = createHoodClient({
         chain: network,
-        transport: buildTransport(rpcUrl),
+        transport,
         account,
         acknowledgeStockTokenEligibility: !!opts.acknowledgeEligibility,
       })

@@ -403,6 +403,16 @@ No wallet is required for any read command (`price`, `stocks`, `coins`, `launche
 | `HOOD_WALLET_PASSWORD` | wallet keystore password, read non-interactively (for scripts/CI) |
 | `ROBINHOOD_CHAIN_PRIVATE_KEY` | sign with this private key directly, skipping the keystore |
 | `ROBINHOOD_CHAIN_IMPORT_KEY` | private key to import when running `hood config set wallet` (instead of generating a new one) |
+| `HOOD_RPC_HEADERS` | JSON object of HTTP headers for an explicitly configured RPC endpoint |
+
+For RPC providers that require headers, set `HOOD_RPC_HEADERS` to a JSON object whose values are
+strings, for example `{"x-api-key":"<your-key>"}`. Headers apply only when the endpoint comes
+from `--rpc`, the matching `rpc`/`testnetRpc` config value, or the existing Alchemy URL; they are
+never sent to the SDK's public default endpoint. Inject the value from a secret manager or runtime
+environment rather than placing credentials in an RPC URL, command-line argument, or persistent
+config. The CLI does not add these headers to config output or logs. For a BlockVectra endpoint
+that authenticates with `x-api-key`, configure that header here and provide the endpoint with
+`--rpc` or the matching persistent RPC setting.
 
 Persistent config keys (`hood config set <key> <value>`):
 
