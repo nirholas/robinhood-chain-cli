@@ -1,0 +1,17 @@
+{
+  "name": "hood-cli",
+  "version": "0.2.1",
+  "description": "Run the hood CLI for Robinhood Chain: prices, portfolios, launches and tx decoding, plus guarded swaps and transfers.",
+  "author": {
+    "name": "nirholas"
+  },
+  "repository": "https://github.com/nirholas/robinhood-chain-cli",
+  "homepage": "https://nirholas.github.io/robinhood-chain-cli/",
+  "keywords": [
+    "robinhood-chain",
+    "cli",
+    "hood",
+    "stock-tokens",
+    "web3"
+  ]
+}

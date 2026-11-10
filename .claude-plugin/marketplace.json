@@ -1,0 +1,21 @@
+{
+  "name": "robinhood-chain-cli",
+  "owner": {
+    "name": "nirholas"
+  },
+  "description": "Run the hood CLI for Robinhood Chain: prices, portfolios, launches and tx decoding, plus guarded swaps and transfers.",
+  "plugins": [
+    {
+      "name": "hood-cli",
+      "source": "./plugins/hood-cli",
+      "description": "Run the hood CLI for Robinhood Chain: prices, portfolios, launches and tx decoding, plus guarded swaps and transfers.",
+      "category": "development",
+      "tags": [
+        "robinhood-chain",
+        "cli",
+        "crypto",
+        "trading"
+      ]
+    }
+  ]
+}
